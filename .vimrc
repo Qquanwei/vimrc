@@ -1,4 +1,3 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vundle settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let is_init=0
@@ -22,6 +21,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'easymotion/vim-easymotion'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
@@ -36,6 +36,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'ctrlp-modified.vim'
 Plugin 'pangloss/vim-javascript'
+Plugin 'valloric/MatchTagAlways'
 Plugin 'juvenn/mustache.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -54,7 +55,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-haml'
 Plugin 'klen/python-mode'
-" Plugin 'fatih/vim-go'
+"Plugin 'fatih/vim-go'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'Quramy/tsuquyomi'
@@ -88,13 +89,11 @@ set title
 set showmode
 " Don't redraw while executing macros (good performance config)
 set lazyredraw
-"Always show current position
-set ruler
 " Show line number
 set number
 " Highlight current line
-set cursorline
-set colorcolumn=80
+"set cursorline
+"set colorcolumn=80
 " Highlight search results
 set hlsearch
 " Makes search act like search in modern browsers
@@ -194,14 +193,14 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
 " Switch cursor from block in insert mode
 " if exists('$ITERM_PROFILE')
-  " " Swap iTerm2 cursors in vim insert mode when using tmux
-  " if exists('$TMUX')
-    " let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-    " let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-  " else
-    " let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    " let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-  " endif
+" " Swap iTerm2 cursors in vim insert mode when using tmux
+" if exists('$TMUX')
+" let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+" let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+" else
+" let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+" let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+" endif
 " endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -254,17 +253,15 @@ nnoremap <c-k> mz:m-2<cr>`z
 nnoremap tb :TagbarToggle<CR>
 " <tab> | Circular windows navigation
 nnoremap <tab>   <c-w>w
-" Useful mappings for managing tabs
-nnoremap <C-t> :tabnew<CR>
-nnoremap <leader>p :tabprevious<CR>
-nnoremap <leader>n :tabnext<CR>
+nnoremap <leader>p :bp<CR>
+nnoremap <leader>n :bn<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Insert Mode
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " <C-j> | Escaping!
 inoremap <C-j> <ESC>
-inoremap <esc> <nop>
+"inoremap <esc> <nop>
 " delete line
 " inoremap <C-d> <esc>ddi
 
@@ -390,7 +387,7 @@ let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=1
 let g:syntastic_html_tidy_exec='tidy5'
 let g:syntastic_python_checkers=['pyflakes']
-let g:syntastic_javascript_checkers=['eslint']
+"let g:syntastic_javascript_checkers=['eslint']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => tern-for-vim
@@ -405,5 +402,7 @@ let g:tern_map_keys=1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => tern-for-vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Allow JSX in normal JS files
+" Allow JSX in normal JS file
 let g:jsx_ext_required = 0 
+color elflord
+nnoremap <leader>% :MtaJumpToOtherTag<cr>
