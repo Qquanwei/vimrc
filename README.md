@@ -39,9 +39,12 @@ js-beautify是一个npm安装的程序
 * leader k : 行级向上跳转
 * leader h : 行内跳转向前
 * leader l : 行内跳转向后
+* leader jd : 跳转到定义
+* Ctrl+j : 向下移动区域
+* Ctrl+k : 向上移动区域
+* Ctrl+p : 模糊查找文件
 * Ctrl+f   : AutoFormat 自动格式化js代码
 * Normal模式下用tab键切换panel
-* Ctrl+p : 模糊查找文件
 
 ##前端开发组快捷键
 [emmet](https://github.com/mattn/emmet-vim)
