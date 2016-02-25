@@ -54,11 +54,9 @@ Plugin 'python-syntax'
 Plugin 'Raimondi/delimitMate'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-haml'
-Plugin 'klen/python-mode'
 "Plugin 'fatih/vim-go'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'leafgarland/typescript-vim'
-Plugin 'Quramy/tsuquyomi'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
@@ -406,3 +404,4 @@ let g:tern_map_keys=1
 let g:jsx_ext_required = 0 
 color elflord
 nnoremap <leader>% :MtaJumpToOtherTag<cr>
+
