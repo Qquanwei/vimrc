@@ -42,6 +42,7 @@ js-beautify是一个npm安装的程序
 * Ctrl+f   : AutoFormat 自动格式化js代码
 * Normal模式下用tab键切换panel
 * Ctrl+p : 模糊查找文件
+
 ##前端开发组快捷键
 [emmet](https://github.com/mattn/emmet-vim)
 > emmet 的leader键为Ctrl+y
