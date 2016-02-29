@@ -44,6 +44,7 @@ js-beautify是一个npm安装的程序
 * Ctrl+k : 向上移动区域
 * Ctrl+p : 模糊查找文件
 * Ctrl+f   : AutoFormat 自动格式化js代码
+* Ctrl+n   : MultilCursor  类似Sublime的多处编辑实现，Ctrl+n可以选择下一个相似的元素，然后同时编辑
 * Normal模式下用tab键切换panel
 
 ##前端开发组快捷键
