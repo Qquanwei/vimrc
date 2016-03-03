@@ -154,3 +154,12 @@ js-beautify是一个npm安装的程序
   在img标签内键入Ctrl+y+i
   <img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png" width="540" height="258">
 ```
+
+###ES6语法检查
+```
+npm install -g eslint babel-eslint eslint-plugin-react // 安装babel，eslint
+cp ./.eslintrc ~/ //将eslintrc复制到家目录
+
+//编辑.vimrc 将下面一行注释给去掉
+let g:syntastic_javascript_checkers=['eslint']
+```
