@@ -171,6 +171,7 @@ let g:syntastic_javascript_checkers=['eslint']
 
 * tern_for_vim 插件
 * YCM 编译时的tern参数
+* 启动tern服务 `nohup tern &`
 
 ####配置文件
 
