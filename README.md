@@ -166,9 +166,13 @@ let g:syntastic_javascript_checkers=['eslint']
 
 ###JS自动补齐
 * js自动补齐由YCM+tern来实现。
+
 ####必要条件
-> tern_for_vim 插件
-> YCM 编译时的tern参数
+
+* tern_for_vim 插件
+* YCM 编译时的tern参数
+
 ####配置文件
+
 * 将.tern_project拷贝到家目录即可,同时也可在项目目录中创建改文件实现特定补齐
 * plugins中可加入node,angular,react 来实现特定补齐操作
