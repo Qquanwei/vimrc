@@ -55,7 +55,8 @@ js-beautify是一个npm安装的程序
 
 ##前端开发组快捷键
 [emmet](https://github.com/mattn/emmet-vim)
-> emmet 的leader键为Ctrl+y
+ emmet 的leader键为Ctrl+y
+
 * 自动生成html框架
 ```
   html:5 在normal模式下Ctrl+y+, 键生成html基础框架
