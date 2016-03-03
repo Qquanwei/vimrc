@@ -185,5 +185,5 @@ let g:syntastic_javascript_checkers=['eslint']
 * VIM的全文搜索由vimgrep提供,可以在命令界面输入:vimgrep /partten/gj files来使用全文搜索。搜索结果会在quickfix中显示，可在正常模式下通过`co`打开`cc`关闭。
 * g 表示搜索全部结果，而不是搜索第一个结果
 * j 表示不自动跳转到第一条文件中
-* files支持正则匹配,*.js 查找当前目录下所有js文件。*/*.js递归查找
+* files支持正则匹配,`*.js` 查找当前目录下所有js文件。`**/*.js`递归查找
 
