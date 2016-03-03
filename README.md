@@ -50,6 +50,8 @@ js-beautify是一个npm安装的程序
 * K : Normal模式下使用man手册查询单词
 * J : Normal模式下合并上下两行
 * Normal模式下用tab键切换panel
+* cc : 关闭quickfix
+* co : 打开quickfix
 
 ##前端开发组快捷键
 [emmet](https://github.com/mattn/emmet-vim)

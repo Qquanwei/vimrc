@@ -1,3 +1,4 @@
+set nocompatible
 " => Vundle settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let is_init=0
@@ -11,7 +12,6 @@ if !filereadable(vundle_readme)
   let is_init=1
 endif
 
-set nocompatible
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -406,3 +406,5 @@ let g:jsx_ext_required = 0
 color elflord
 nnoremap <leader>% :MtaJumpToOtherTag<cr>
 
+map cc :cclose<cr>
+map co :copen<cr>
