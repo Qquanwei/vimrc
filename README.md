@@ -15,6 +15,13 @@ cd ~/.vim/bundle/YouCompleteMe
 ./install.py --clang-completer --tern-completer
 ```
 
+## C++ 补全操作
+
+* 在包管理器中安装最新版libclang(>=3.5)
+* 编译参数加上 `--clang-completer`,如果出错则 指定`--system-clang`参数 尝试
+* 拷贝`./test/cpp/.ycm_extra_conf.py`到项目工程，可适当修改其中的参数，加上本地include补齐路径
+* 全局函数触发使用`::`,且将文件后缀改为`cpp`,`h`
+
 #`tern-for-vim`Config
 需要进行一次配置，不然会提示出错
 ```
@@ -55,8 +62,7 @@ js-beautify是一个npm安装的程序
 
 ##前端开发组快捷键
 [emmet](https://github.com/mattn/emmet-vim)
- emmet 的leader键为Ctrl+y
-
+> emmet 的leader键为Ctrl+y
 * 自动生成html框架
 ```
   html:5 在normal模式下Ctrl+y+, 键生成html基础框架
@@ -182,9 +188,7 @@ let g:syntastic_javascript_checkers=['eslint']
 * plugins中可加入node,angular,react 来实现特定补齐操作
 
 ###全文搜索
-
-* VIM的全文搜索由vimgrep提供,可以在命令界面输入:vimgrep /partten/gj files来使用全文搜索。搜索结果会在quickfix中显示，可在正常模式下通过`co`打开`cc`关闭。
+> VIM的全文搜索由vimgrep提供,可以在命令界面输入:vimgrep /partten/gj files来使用全文搜索。搜索结果会在quickfix中显示，可在正常模式下通过`co`打开`cc`关闭。
 * g 表示搜索全部结果，而不是搜索第一个结果
 * j 表示不自动跳转到第一条文件中
-* files支持正则匹配,`*.js` 查找当前目录下所有js文件。`**/*.js`递归查找
-
+* files支持正则匹配,*.js 查找当前目录下所有js文件。*/*.js递归查找
