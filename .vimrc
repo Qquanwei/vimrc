@@ -409,3 +409,6 @@ nnoremap <leader>% :MtaJumpToOtherTag<cr>
 
 map cc :cclose<cr>
 map co :copen<cr>
+
+"ctags jump to new split window
+map <C-]> :sp <CR>:exec("tag ".expand("<cword>"))<CR>

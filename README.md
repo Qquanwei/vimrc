@@ -52,6 +52,10 @@ js-beautify是一个npm安装的程序
 * Ctrl+p : 模糊查找文件
 * Ctrl+f   : AutoFormat 自动格式化js代码
 * Ctrl+n   : MultilCursor  类似Sublime的多处编辑实现，Ctrl+n可以选择下一个相似的元素，然后同时编辑
+
+* Ctrl+w { : 打开ctags中定义到预览窗口
+* Ctrl+w z : 关闭预览窗口
+
 * H : Normal模式下跳转到行首
 * L : Normal模式下跳转到行尾
 * K : Normal模式下使用man手册查询单词
@@ -193,3 +197,4 @@ let g:syntastic_javascript_checkers=['eslint']
 * g 表示搜索全部结果，而不是搜索第一个结果
 * j 表示不自动跳转到第一条文件中
 * files支持正则匹配,*.js 查找当前目录下所有js文件。*/*.js递归查找
+
