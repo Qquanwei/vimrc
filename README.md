@@ -197,7 +197,8 @@ let g:syntastic_javascript_checkers=['eslint']
 * g 表示搜索全部结果，而不是搜索第一个结果
 * j 表示不自动跳转到第一条文件中
 * files支持正则匹配,*.js 查找当前目录下所有js文件。*/*.js递归查找
-###
+
+###Shell美化--背景图像
 
 * `./background-lbqb.jpg` 龙背上的骑兵CG图，可以的话可作为shell背景图像，可选
 
