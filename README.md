@@ -52,6 +52,7 @@ js-beautify是一个npm安装的程序
 * Ctrl+p : 模糊查找文件
 * Ctrl+f   : AutoFormat 自动格式化js代码
 * Ctrl+n   : MultilCursor  类似Sublime的多处编辑实现，Ctrl+n可以选择下一个相似的元素，然后同时编辑
+* `Ctrl+[` : 相当于ESC键
 
 * Ctrl+w { : 打开ctags中定义到预览窗口
 * Ctrl+w z : 关闭预览窗口
@@ -63,6 +64,16 @@ js-beautify是一个npm安装的程序
 * Normal模式下用tab键切换panel
 * cc : 关闭quickfix
 * co : 打开quickfix
+* zz : 将当前行滚动到屏幕中间
+* `*` : 在普通模式下用于查找光标所在单词
+* gu : 普通模式下将单词变为小写,同理 guu 将当前行转换为小写
+* gU : 普通模式下将单词变为大写,gUU将当前行转换为大写
+* g~ : 反转大小写
+* >> : 增加缩进
+* << : 减少缩进
+* = : 自动缩进
+
+* y : 复制到寄存器
 
 ##前端开发组快捷键
 [emmet](https://github.com/mattn/emmet-vim)
