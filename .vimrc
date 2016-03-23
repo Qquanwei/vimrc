@@ -243,8 +243,16 @@ nnoremap k gk
 nnoremap gk k
 nnoremap j gj
 nnoremap gj j
+
 " Formatting code
-nnoremap <c-f> :Autoformat<CR>
+
+".vimrc
+map <c-f> :Autoformat<cr>
+autocmd FileType json noremap <c-f> :call JsonBeautify()<cr>
+autocmd FileType jsx noremap  <c-f> :call JsxBeautify()<cr>
+autocmd FileType html noremap <c-f> :call HtmlBeautify()<cr>
+autocmd FileType css noremap  <c-f> :call CSSBeautify()<cr>
+autocmd FileType js noremap   <c-f> :call JsBeautify()<cr>
 " Move a line of text 
 nnoremap <c-j> mz:m+<cr>`z
 nnoremap <c-k> mz:m-2<cr>`z
@@ -404,7 +412,7 @@ let g:tern_map_keys=1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Allow JSX in normal JS file
 let g:jsx_ext_required = 0 
-color elflord
+color blue
 nnoremap <leader>% :MtaJumpToOtherTag<cr>
 
 map cc :cclose<cr>
