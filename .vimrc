@@ -248,11 +248,6 @@ nnoremap gj j
 
 ".vimrc
 map <c-f> :Autoformat<cr>
-autocmd FileType json noremap <c-f> :call JsonBeautify()<cr>
-autocmd FileType jsx noremap  <c-f> :call JsxBeautify()<cr>
-autocmd FileType html noremap <c-f> :call HtmlBeautify()<cr>
-autocmd FileType css noremap  <c-f> :call CSSBeautify()<cr>
-autocmd FileType js noremap   <c-f> :call JsBeautify()<cr>
 " Move a line of text 
 nnoremap <c-j> mz:m+<cr>`z
 nnoremap <c-k> mz:m-2<cr>`z
@@ -395,7 +390,7 @@ let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=1
 let g:syntastic_html_tidy_exec='tidy5'
 let g:syntastic_python_checkers=['pyflakes']
-let g:syntastic_javascript_checkers=['eslint'] 
+" let g:syntastic_javascript_checkers=['eslint'] 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => tern-for-vim

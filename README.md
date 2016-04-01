@@ -72,8 +72,9 @@ js-beautify是一个npm安装的程序
 * >> : 增加缩进
 * << : 减少缩进
 * = : 自动缩进
-
 * y : 复制到寄存器
+* vertical resize +5 增加window宽度
+* resize +5 增加window高度
 
 ##前端开发组快捷键
 [emmet](https://github.com/mattn/emmet-vim)
