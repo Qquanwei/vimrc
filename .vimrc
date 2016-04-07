@@ -412,4 +412,6 @@ nnoremap <leader>% :MtaJumpToOtherTag<cr>
 
 map cc :cclose<cr>
 map co :copen<cr>
+nnoremap + <c-w>+
+nnoremap - <c-w>-
 
