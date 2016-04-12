@@ -415,4 +415,5 @@ map cc :cclose<cr>
 map co :copen<cr>
 nnoremap + <c-w>+
 nnoremap - <c-w>-
-
+hi Pmenu ctermbg=209 ctermfg=235
+hi CursorLine cterm=bold ctermbg=135
