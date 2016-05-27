@@ -22,7 +22,6 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'easymotion/vim-easymotion'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'The-NERD-Commenter'
@@ -30,6 +29,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'einars/js-beautify'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'tpope/vim-rails'
@@ -51,12 +51,9 @@ Plugin 'mxw/vim-jsx'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-surround'
 Plugin 'python-syntax'
-Plugin 'klen/python-mode'
 Plugin 'Raimondi/delimitMate'
-Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-haml'
 Plugin 'gorodinskiy/vim-coloresque'
-"Plugin 'fatih/vim-go'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'leafgarland/typescript-vim'
 " All of your Plugins must be added before the following line
@@ -206,9 +203,7 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Remap keys
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Map ; to :  and save a million keystrokes
 " ex mode commands made easy
-nnoremap ; :
 let mapleader = ","
 let g:mapleader = ","
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
@@ -262,8 +257,6 @@ nnoremap <leader>n :bn<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Insert Mode
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" <C-j> | Escaping!
-inoremap <C-j> <ESC>
 "inoremap <esc> <nop>
 " delete line
 " inoremap <C-d> <esc>ddi
@@ -391,7 +384,15 @@ let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=1
 let g:syntastic_html_tidy_exec='tidy5'
 let g:syntastic_python_checkers=['pyflakes']
-" let g:syntastic_javascript_checkers=['eslint'] 
+let local_eslint=finddir('node_modules','.;') . '/.bin/eslint'
+if matchstr(local_eslint,"^\/\\w")==''
+  let local_eslint=getcwd() . "/" . local_eslint
+endif
+if executable(local_eslint)
+  let g:syntastic_javascript_eslint_exec=local_eslint
+endif
+
+" let g:syntastic_javascript_checkers=['eslint']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => tern-for-vim
@@ -408,7 +409,6 @@ let g:tern_map_keys=1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Allow JSX in normal JS file
 let g:jsx_ext_required = 0 
-color blue
 nnoremap <leader>% :MtaJumpToOtherTag<cr>
 
 map cc :cclose<cr>
@@ -417,3 +417,4 @@ nnoremap + <c-w>+
 nnoremap - <c-w>-
 hi Pmenu ctermbg=209 ctermfg=235
 hi CursorLine cterm=bold ctermbg=135
+hi Search ctermbg=green
