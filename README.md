@@ -17,7 +17,7 @@
 
 |快捷键|解释|
 |-----|----:|
-|,|<leader>|
-|<leader>u|unite|
-|[unite]f|搜索文件，自动添加gitignore规则|
-|[unite]g|全文搜索|
+|`,`|`<leader>`|
+|`<leader>u`|`unite`|
+|`[unite]f`|搜索文件，自动添加gitignore规则|
+|`[unite]g`|全文搜索|
