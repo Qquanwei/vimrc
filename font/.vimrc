@@ -20,6 +20,8 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimshell.vim'
 Plugin 'Shougo/vimproc.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
 call vundle#end()
 
@@ -34,13 +36,18 @@ syntax on
 " 快捷键
 map H ^
 map L $
+map <c-j> :m . +1<cr>
+map <c-k> :m . -2<cr>
 map <leader>w :w<cr>
 map ; :
+imap jk <Esc>
+imap kj <Esc>
+
 
 " 映射tab为切换window
 nnoremap <tab> <c-w>w
-
 " NERDTree 
+
 map <leader>f :NERDTreeToggle<cr>
 let NERDTreeShowLineNumbers=1
 let NERDTreeShowBookmarks=1
@@ -100,6 +107,22 @@ if executable('ag')
     let g:unite_source_grep_command='ag'
 endif
 
+" jsx syntax support 
+let g:jsx_ext_required = 0
+let g:jsx_pragma_required = 1
+let g:javascript_enable_domhtmlcss=1
+let g:javascript_ignore_javaScriptdoc=1
+let g:javascript_conceal_function       = "ƒ"
+let g:javascript_conceal_null           = "ø"
+let g:javascript_conceal_this           = "@"
+let g:javascript_conceal_return         = "⇚"
+let g:javascript_conceal_undefined      = "¿"
+let g:javascript_conceal_NaN            = "ℕ"
+let g:javascript_conceal_prototype      = "¶"
+let g:javascript_conceal_static         = "•"
+let g:javascript_conceal_super          = "Ω"
+let g:javascript_conceal_arrow_function = "⇒"
+
 
 
 set number
@@ -118,6 +141,7 @@ set nowb
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
+set nowrap
 
 nnoremap k gk
 nnoremap j gj
