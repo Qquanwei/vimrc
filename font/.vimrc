@@ -6,7 +6,6 @@ set shell=/bin/bash
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
-
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Lokaltog/vim-powerline'
@@ -18,10 +17,18 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'jpo/vim-railscasts-theme'
 Plugin 'Raimondi/delimitMate'
 Plugin 'Shougo/unite.vim'
-Plugin 'Shougo/vimshell.vim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'ruanyl/vim-eslint'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/syntastic'
+Plugin 'sonjapeterson/1989.vim'
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'fholgado/minibufexpl.vim'
+Plugin 'maksimr/vim-jsbeautify'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'junegunn/vim-easy-align'
 
 call vundle#end()
 
@@ -40,8 +47,14 @@ map <c-j> :m . +1<cr>
 map <c-k> :m . -2<cr>
 map <leader>w :w<cr>
 map ; :
-imap jk <Esc>
-imap kj <Esc>
+imap <c-l> <esc>la
+imap <c-h> <esc>ha
+map <c-b> <left>
+map <c-f> <right>
+map <c-a> <home>
+map <c-e> <end>
+map K <nop>
+
 
 
 " 映射tab为切换window
@@ -87,8 +100,8 @@ nmap <leader>u [unite]
 nnoremap <silent> [unite]f :<C-u>Unite
       \ -start-insert file_rec/async<CR>
 nnoremap <silent> [unite]r <Plug>(unite_redraw)
-nnoremap <silent> [unite]g :Unite grep:.<CR>
 
+nnoremap <silent> [unite]g :Unite grep:.<CR>
 call unite#custom#profile('files', 'context.smartcase', 1)
 call unite#custom#profile('files', 'context.ignorecase', 1)
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
@@ -108,22 +121,37 @@ if executable('ag')
 endif
 
 " jsx syntax support 
-let g:jsx_ext_required = 0
-let g:jsx_pragma_required = 1
+let g:jsx_ext_required=1
+let g:jsx_pragma_required=0
 let g:javascript_enable_domhtmlcss=1
 let g:javascript_ignore_javaScriptdoc=1
-let g:javascript_conceal_function       = "ƒ"
-let g:javascript_conceal_null           = "ø"
-let g:javascript_conceal_this           = "@"
-let g:javascript_conceal_return         = "⇚"
-let g:javascript_conceal_undefined      = "¿"
-let g:javascript_conceal_NaN            = "ℕ"
-let g:javascript_conceal_prototype      = "¶"
-let g:javascript_conceal_static         = "•"
-let g:javascript_conceal_super          = "Ω"
-let g:javascript_conceal_arrow_function = "⇒"
+let g:javascript_conceal_function="ƒ"
+let g:javascript_conceal_null="ø"
+let g:javascript_conceal_this="@"
+let g:javascript_conceal_return="⇚"
+let g:javascript_conceal_undefined="¿"
+let g:javascript_conceal_NaN="ℕ"
+let g:javascript_conceal_prototype="¶"
+let g:javascript_conceal_static="•"
+let g:javascript_conceal_super="Ω"
+let g:javascript_conceal_arrow_function="⇒"
+" eslint
+let g:syntastic_javascript_checkers = ['eslint']
 
+" MiniBufExpl Colors
+hi MBENormal               guifg=#808080 guibg=fg
+hi MBEChanged              guifg=#CD5907 guibg=fg
+hi MBEVisibleNormal        guifg=#5DC2D6 guibg=fg
+hi MBEVisibleChanged       guifg=#F1266F guibg=fg
+hi MBEVisibleActiveNormal  guifg=#A6DB29 guibg=fg
+hi MBEVisibleActiveChanged guifg=#F1266F guibg=fg
 
+map <c-f> :call JsBeautify()<cr>
+autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
+autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
+autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 
 set number
 set hlsearch
@@ -147,3 +175,14 @@ nnoremap k gk
 nnoremap j gj
 nnoremap gk k
 nnoremap gj j
+
+" 窗口管理模式
+nnoremap + <c-w>+
+nnoremap - <c-w>-
+nnoremap ( <c-w><
+nnoremap ) <c-w>>
+
+" 修复颜色问题
+hi Normal ctermbg=None
+
+set mouse=a
