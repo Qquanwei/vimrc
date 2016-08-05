@@ -29,6 +29,7 @@ Plugin 'fholgado/minibufexpl.vim'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'junegunn/vim-easy-align'
+Plugin 'vim-scripts/taglist.vim'
 
 call vundle#end()
 
@@ -120,6 +121,11 @@ if executable('ag')
     let g:unite_source_grep_command='ag'
 endif
 
+" CTaglist
+let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
+"let Tlist_Use_Right_Window=1
+
+
 " jsx syntax support 
 let g:jsx_ext_required=1
 let g:jsx_pragma_required=0
@@ -184,5 +190,6 @@ nnoremap ) <c-w>>
 
 " 修复颜色问题
 hi Normal ctermbg=None
+hi CursorLine cterm=reverse term=reverse
 
 set mouse=a
