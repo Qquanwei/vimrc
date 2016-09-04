@@ -24,7 +24,7 @@
 |`<leader>u`|`unite`|
 |`[unite]f`|搜索文件，自动添加gitignore规则|
 |`[unite]g`|全文搜索|
-|<leader>f| NerdTree 浏览项目目录|
-|<leader>n| tab next|
-|<leader>p| tab prev|
+|`<leader>f`| NerdTree 浏览项目目录|
+|`<leader>n`| tab next|
+|`<leader>p`| tab prev|
 |空格|本buffer文本搜索|
