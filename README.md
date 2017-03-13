@@ -1,6 +1,6 @@
 # Installation
 * install vundle $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-* git clone git@github.com:Qquanwei/vimrc.git
+* git clone https://github.com/Qquanwei/vimrc.git
 * cd vimrc
 * cp ./.vimrc ~/
 * cp ./.tern-project ~/
